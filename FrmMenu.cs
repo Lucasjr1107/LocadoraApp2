@@ -12,5 +12,10 @@ namespace LocadoraApp2
             FrmNovaMidia frmNovaMidia = new FrmNovaMidia();
             frmNovaMidia.Show();
         }
+
+        private void FrmMenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

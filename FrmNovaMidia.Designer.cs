@@ -33,7 +33,7 @@
             lblAutor = new Label();
             txtAutor = new TextBox();
             lblSinopse = new Label();
-            textBox3 = new TextBox();
+            txtSinopse = new TextBox();
             lblGenero = new Label();
             lblCodigo = new Label();
             numCodigo = new NumericUpDown();
@@ -42,12 +42,15 @@
             lblClasseInd = new Label();
             lblAnoLançado = new Label();
             label1 = new Label();
-            numDuraçao = new NumericUpDown();
+            numDuracao = new NumericUpDown();
             btnSalvar = new Button();
             btnCancelar = new Button();
-            dateTimePicker1 = new DateTimePicker();
+            btnEditar = new Button();
+            btnApagar = new Button();
+            numAnoLancamento = new NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)numCodigo).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numDuraçao).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numDuracao).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numAnoLancamento).BeginInit();
             SuspendLayout();
             // 
             // lblTitulo
@@ -91,13 +94,13 @@
             lblSinopse.TabIndex = 5;
             lblSinopse.Text = "Sinopse";
             // 
-            // textBox3
+            // txtSinopse
             // 
-            textBox3.Location = new Point(1, 293);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(865, 158);
-            textBox3.TabIndex = 7;
+            txtSinopse.Location = new Point(1, 293);
+            txtSinopse.Multiline = true;
+            txtSinopse.Name = "txtSinopse";
+            txtSinopse.Size = new Size(865, 158);
+            txtSinopse.TabIndex = 7;
             // 
             // lblGenero
             // 
@@ -129,6 +132,7 @@
             // cmbGenero
             // 
             cmbGenero.FormattingEnabled = true;
+            cmbGenero.Items.AddRange(new object[] { "Animação", "Terror", "Comedia", "Ação", "Suspense", "Ficçao" });
             cmbGenero.Location = new Point(3, 161);
             cmbGenero.Name = "cmbGenero";
             cmbGenero.Size = new Size(383, 33);
@@ -137,6 +141,7 @@
             // cmbClassInd
             // 
             cmbClassInd.FormattingEnabled = true;
+            cmbClassInd.Items.AddRange(new object[] { "+10", "+14", "+16", "18", "L" });
             cmbClassInd.Location = new Point(427, 161);
             cmbClassInd.Name = "cmbClassInd";
             cmbClassInd.Size = new Size(439, 33);
@@ -169,12 +174,12 @@
             label1.TabIndex = 15;
             label1.Text = "Duraçao (Minutos)";
             // 
-            // numDuraçao
+            // numDuracao
             // 
-            numDuraçao.Location = new Point(427, 231);
-            numDuraçao.Name = "numDuraçao";
-            numDuraçao.Size = new Size(439, 31);
-            numDuraçao.TabIndex = 6;
+            numDuracao.Location = new Point(427, 231);
+            numDuracao.Name = "numDuracao";
+            numDuracao.Size = new Size(439, 31);
+            numDuracao.TabIndex = 6;
             // 
             // btnSalvar
             // 
@@ -195,24 +200,44 @@
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // btnEditar
             // 
-            dateTimePicker1.CustomFormat = "yyyy";
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(3, 231);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(383, 31);
-            dateTimePicker1.TabIndex = 5;
+            btnEditar.Location = new Point(473, 479);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(112, 34);
+            btnEditar.TabIndex = 19;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
+            // 
+            // btnApagar
+            // 
+            btnApagar.Location = new Point(337, 479);
+            btnApagar.Name = "btnApagar";
+            btnApagar.Size = new Size(112, 34);
+            btnApagar.TabIndex = 20;
+            btnApagar.Text = "Apagar";
+            btnApagar.UseVisualStyleBackColor = true;
+            btnApagar.Click += btnApagar_Click;
+            // 
+            // numAnoLancamento
+            // 
+            numAnoLancamento.Location = new Point(3, 231);
+            numAnoLancamento.Name = "numAnoLancamento";
+            numAnoLancamento.Size = new Size(383, 31);
+            numAnoLancamento.TabIndex = 21;
             // 
             // FrmNovaMidia
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(878, 535);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(numAnoLancamento);
+            Controls.Add(btnApagar);
+            Controls.Add(btnEditar);
             Controls.Add(btnCancelar);
             Controls.Add(btnSalvar);
-            Controls.Add(numDuraçao);
+            Controls.Add(numDuracao);
             Controls.Add(label1);
             Controls.Add(lblAnoLançado);
             Controls.Add(lblClasseInd);
@@ -221,7 +246,7 @@
             Controls.Add(numCodigo);
             Controls.Add(lblCodigo);
             Controls.Add(lblGenero);
-            Controls.Add(textBox3);
+            Controls.Add(txtSinopse);
             Controls.Add(lblSinopse);
             Controls.Add(txtAutor);
             Controls.Add(lblAutor);
@@ -230,7 +255,8 @@
             Name = "FrmNovaMidia";
             Text = "FrmNovaMidia";
             ((System.ComponentModel.ISupportInitialize)numCodigo).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numDuraçao).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numDuracao).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numAnoLancamento).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -242,7 +268,7 @@
         private Label lblAutor;
         private TextBox txtAutor;
         private Label lblSinopse;
-        private TextBox textBox3;
+        private TextBox txtSinopse;
         private Label lblGenero;
         private Label lblCodigo;
         private NumericUpDown numCodigo;
@@ -251,9 +277,11 @@
         private Label lblClasseInd;
         private Label lblAnoLançado;
         private Label label1;
-        private NumericUpDown numDuraçao;
+        private NumericUpDown numDuracao;
         private Button btnSalvar;
         private Button btnCancelar;
-        private DateTimePicker dateTimePicker1;
+        private Button btnEditar;
+        private Button btnApagar;
+        private NumericUpDown numAnoLancamento;
     }
 }

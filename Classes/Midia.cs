@@ -21,7 +21,9 @@ namespace LocadoraApp2.Classes
         public string Sinopse { get; set; } 
         public string Autor {  get; set; }  
         public int Ano { get; set; } 
-        public int Duraçao { get; set; }
-        public string ClassificacaoIndicativa { get; set; } 
+        public int Duracao { get; set; }
+        public string ClassificacaoIndicativa { get; set; }
+
+        public List<Item> Itens { get; set; }
     }
 }

@@ -30,12 +30,12 @@
         {
             stripMenu = new MenuStrip();
             midiasToolStripMenuItem = new ToolStripMenuItem();
-            locaçõesToolStripMenuItem = new ToolStripMenuItem();
-            sairToolStripMenuItem = new ToolStripMenuItem();
             novoToolStripMenuItem = new ToolStripMenuItem();
             listaToolStripMenuItem = new ToolStripMenuItem();
+            locaçõesToolStripMenuItem = new ToolStripMenuItem();
             novaToolStripMenuItem = new ToolStripMenuItem();
             listaToolStripMenuItem1 = new ToolStripMenuItem();
+            sairToolStripMenuItem = new ToolStripMenuItem();
             stripMenu.SuspendLayout();
             SuspendLayout();
             // 
@@ -56,6 +56,19 @@
             midiasToolStripMenuItem.Size = new Size(80, 29);
             midiasToolStripMenuItem.Text = "Midias";
             // 
+            // novoToolStripMenuItem
+            // 
+            novoToolStripMenuItem.Name = "novoToolStripMenuItem";
+            novoToolStripMenuItem.Size = new Size(156, 34);
+            novoToolStripMenuItem.Text = "Nova";
+            novoToolStripMenuItem.Click += novoToolStripMenuItem_Click;
+            // 
+            // listaToolStripMenuItem
+            // 
+            listaToolStripMenuItem.Name = "listaToolStripMenuItem";
+            listaToolStripMenuItem.Size = new Size(156, 34);
+            listaToolStripMenuItem.Text = "Lista";
+            // 
             // locaçõesToolStripMenuItem
             // 
             locaçõesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novaToolStripMenuItem, listaToolStripMenuItem1 });
@@ -63,36 +76,23 @@
             locaçõesToolStripMenuItem.Size = new Size(100, 29);
             locaçõesToolStripMenuItem.Text = "Locações";
             // 
-            // sairToolStripMenuItem
-            // 
-            sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            sairToolStripMenuItem.Size = new Size(57, 29);
-            sairToolStripMenuItem.Text = "Sair";
-            // 
-            // novoToolStripMenuItem
-            // 
-            novoToolStripMenuItem.Name = "novoToolStripMenuItem";
-            novoToolStripMenuItem.Size = new Size(270, 34);
-            novoToolStripMenuItem.Text = "Nova";
-            novoToolStripMenuItem.Click += novoToolStripMenuItem_Click;
-            // 
-            // listaToolStripMenuItem
-            // 
-            listaToolStripMenuItem.Name = "listaToolStripMenuItem";
-            listaToolStripMenuItem.Size = new Size(270, 34);
-            listaToolStripMenuItem.Text = "Lista";
-            // 
             // novaToolStripMenuItem
             // 
             novaToolStripMenuItem.Name = "novaToolStripMenuItem";
-            novaToolStripMenuItem.Size = new Size(270, 34);
+            novaToolStripMenuItem.Size = new Size(156, 34);
             novaToolStripMenuItem.Text = "Nova";
             // 
             // listaToolStripMenuItem1
             // 
             listaToolStripMenuItem1.Name = "listaToolStripMenuItem1";
-            listaToolStripMenuItem1.Size = new Size(270, 34);
+            listaToolStripMenuItem1.Size = new Size(156, 34);
             listaToolStripMenuItem1.Text = "Lista";
+            // 
+            // sairToolStripMenuItem
+            // 
+            sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            sairToolStripMenuItem.Size = new Size(57, 29);
+            sairToolStripMenuItem.Text = "Sair";
             // 
             // FrmMenu
             // 
@@ -103,6 +103,7 @@
             MainMenuStrip = stripMenu;
             Name = "FrmMenu";
             Text = "Form1";
+            Load += FrmMenu_Load;
             stripMenu.ResumeLayout(false);
             stripMenu.PerformLayout();
             ResumeLayout(false);
