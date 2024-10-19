@@ -81,6 +81,7 @@
             novaToolStripMenuItem.Name = "novaToolStripMenuItem";
             novaToolStripMenuItem.Size = new Size(156, 34);
             novaToolStripMenuItem.Text = "Nova";
+            novaToolStripMenuItem.Click += novaToolStripMenuItem_Click;
             // 
             // listaToolStripMenuItem1
             // 

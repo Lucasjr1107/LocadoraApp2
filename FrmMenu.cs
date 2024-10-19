@@ -13,9 +13,17 @@ namespace LocadoraApp2
             frmNovaMidia.Show();
         }
 
+
+
+        private void novaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Novalocacao frmnovalocacao = new Novalocacao();
+            frmnovalocacao.Show();
+        }
+
         private void FrmMenu_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
