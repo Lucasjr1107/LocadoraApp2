@@ -223,6 +223,7 @@
             // numAnoLancamento
             // 
             numAnoLancamento.Location = new Point(3, 231);
+            numAnoLancamento.Maximum = new decimal(new int[] { 5000, 0, 0, 0 });
             numAnoLancamento.Name = "numAnoLancamento";
             numAnoLancamento.Size = new Size(383, 31);
             numAnoLancamento.TabIndex = 21;
@@ -254,6 +255,7 @@
             Controls.Add(lblTitulo);
             Name = "FrmNovaMidia";
             Text = "FrmNovaMidia";
+           
             ((System.ComponentModel.ISupportInitialize)numCodigo).EndInit();
             ((System.ComponentModel.ISupportInitialize)numDuracao).EndInit();
             ((System.ComponentModel.ISupportInitialize)numAnoLancamento).EndInit();

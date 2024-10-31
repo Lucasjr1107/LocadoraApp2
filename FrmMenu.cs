@@ -23,7 +23,19 @@ namespace LocadoraApp2
 
         private void FrmMenu_Load(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void listaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmListaMidia frmListaMidia = new FrmListaMidia();
+            frmListaMidia.Show();
+        }
+
+        private void listaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmListaLocacoes frmListaLocacoes = new FrmListaLocacoes();
+            frmListaLocacoes.Show();   
         }
     }
 }

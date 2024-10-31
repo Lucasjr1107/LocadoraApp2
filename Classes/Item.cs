@@ -22,9 +22,47 @@ namespace LocadoraApp2.Classes
         public int MidiaId { get; set; }
         public Midia Midia { get; set; }
 
-        public Item()
+        public decimal ValorTotal
         {
+            get
+            {
+                return Quantidade * Valor * PrazoDevolucao;
+            }
+        }
+
+        public string MidiaTitulo
+        {
+            get
+            {
+                return Midia.Titulo;
+            }
+        }
+
+        public DateTime DataDevolucao
+        {
+            get
+            {
+                if (Locacao != null)
+                {
+                    return Locacao.Data.AddDays(PrazoDevolucao);
+                }
+                else
+                {
+                    return DateTime.Now.AddDays(PrazoDevolucao);
+                }
+
+            }
 
         }
+
+        public Item()
+        {
+            Midia = new Midia();
+        }
+
+
+
+
+
     }
 }

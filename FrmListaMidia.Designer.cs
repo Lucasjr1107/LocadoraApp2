@@ -41,6 +41,7 @@
             dgvListaMidias.RowTemplate.Height = 33;
             dgvListaMidias.Size = new Size(732, 357);
             dgvListaMidias.TabIndex = 0;
+            dgvListaMidias.CellDoubleClick += dgvListaMidias_CellDoubleClick;
             // 
             // FrmListaMidia
             // 
