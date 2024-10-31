@@ -22,11 +22,13 @@ namespace LocadoraApp2
             InitializeComponent();
         }
 
-        private Novalocacao(int LocacaoId)
+        public Novalocacao(int LocacaoId)
         {
             InitializeComponent();
             CamposApenasLeitura(true);
             LocacaoAtual = GetLocacaoById(LocacaoId);
+
+            CarregarDadoslocacaoCampos();
 
         }
 
@@ -261,9 +263,9 @@ namespace LocadoraApp2
 
             btnFechar.Visible = !status;
 
-            grbDadosLocacao.Visible = !status;
+            grbDadosLocacao.Visible = status;
 
-            dgvItenslocacao.ReadOnly = !status;
+            dgvItenslocacao.ReadOnly = status;
 
         }
 
@@ -271,8 +273,8 @@ namespace LocadoraApp2
         {
             if (e.RowIndex >= 0)
             {
-               DataGridViewRow linha = dgvItenslocacao.Rows[e.RowIndex];
-               int ItemId = (int)linha.Cells["ItemId"].Value;
+                DataGridViewRow linha = dgvItenslocacao.Rows[e.RowIndex];
+                int ItemId = (int)linha.Cells["ItemId"].Value;
 
                 using (var contexto = new LocadoraAppDbContext())
                 {
@@ -282,7 +284,7 @@ namespace LocadoraApp2
                         .FirstOrDefault(i => i.ItemId == ItemId);
 
 
-                    if (Item == null)
+                    if (Item != null)
                     {
                         FrmMudaStatus frmMudaStatus = new FrmMudaStatus(Item);
                         frmMudaStatus.ShowDialog();

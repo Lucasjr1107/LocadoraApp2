@@ -135,7 +135,6 @@
             // 
             // grbNovoItem
             // 
-            grbNovoItem.Controls.Add(grbDadosLocacao);
             grbNovoItem.Controls.Add(btnAdicionar);
             grbNovoItem.Controls.Add(numPrazo);
             grbNovoItem.Controls.Add(lblPrazoDevoluçao);
@@ -161,13 +160,14 @@
             grbDadosLocacao.Controls.Add(txtStatus);
             grbDadosLocacao.Controls.Add(numValorTotal);
             grbDadosLocacao.Controls.Add(label3);
-            grbDadosLocacao.Location = new Point(0, 0);
+            grbDadosLocacao.Location = new Point(12, 182);
             grbDadosLocacao.Name = "grbDadosLocacao";
             grbDadosLocacao.Size = new Size(891, 203);
             grbDadosLocacao.TabIndex = 11;
             grbDadosLocacao.TabStop = false;
             grbDadosLocacao.Text = "Itens da locação";
             grbDadosLocacao.UseWaitCursor = true;
+            grbDadosLocacao.Visible = false;
             // 
             // lblStatus
             // 
@@ -339,6 +339,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(911, 628);
+            Controls.Add(grbDadosLocacao);
             Controls.Add(btnFechar);
             Controls.Add(btnCancelar);
             Controls.Add(dgvItenslocacao);

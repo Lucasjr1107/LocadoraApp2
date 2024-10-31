@@ -30,6 +30,8 @@
         {
             label1 = new Label();
             dgvListaLocacao = new DataGridView();
+            lblStatus = new Label();
+            cmbStatus = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgvListaLocacao).BeginInit();
             SuspendLayout();
             // 
@@ -44,19 +46,40 @@
             // dgvListaLocacao
             // 
             dgvListaLocacao.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvListaLocacao.Location = new Point(12, 27);
+            dgvListaLocacao.Location = new Point(12, 110);
             dgvListaLocacao.Name = "dgvListaLocacao";
             dgvListaLocacao.RowHeadersWidth = 62;
             dgvListaLocacao.RowTemplate.Height = 33;
-            dgvListaLocacao.Size = new Size(762, 376);
+            dgvListaLocacao.Size = new Size(762, 307);
             dgvListaLocacao.TabIndex = 0;
             dgvListaLocacao.CellDoubleClick += dgvListaLocacao_CellDoubleClick;
+            // 
+            // lblStatus
+            // 
+            lblStatus.AutoSize = true;
+            lblStatus.Location = new Point(33, 9);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(60, 25);
+            lblStatus.TabIndex = 2;
+            lblStatus.Text = "Status";
+            // 
+            // cmbStatus
+            // 
+            cmbStatus.FormattingEnabled = true;
+            cmbStatus.Items.AddRange(new object[] { "Fechado ", "Concluido" });
+            cmbStatus.Location = new Point(33, 41);
+            cmbStatus.Name = "cmbStatus";
+            cmbStatus.Size = new Size(320, 33);
+            cmbStatus.TabIndex = 3;
+            cmbStatus.SelectedIndexChanged += cmbStatus_SelectedIndexChanged;
             // 
             // FrmListaLocacoes
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(cmbStatus);
+            Controls.Add(lblStatus);
             Controls.Add(label1);
             Controls.Add(dgvListaLocacao);
             Name = "FrmListaLocacoes";
@@ -70,5 +93,7 @@
         #endregion
         private Label label1;
         private DataGridView dgvListaLocacao;
+        private Label lblStatus;
+        private ComboBox cmbStatus;
     }
 }

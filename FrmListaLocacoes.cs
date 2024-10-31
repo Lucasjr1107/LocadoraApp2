@@ -25,6 +25,8 @@ namespace LocadoraApp2
         }
         private List<Locacao> GetLocacoes()
         {
+            string StatusFiltro = cmbStatus.Text;
+
             using (var contexto = new LocadoraAppDbContext())
             {
                 return contexto.Locacoes.ToList();
@@ -59,12 +61,17 @@ namespace LocadoraApp2
 
                 int LocacaoId = (int)linha.Cells["LocacaoId"].Value;
 
-                Novalocacao novalocacao = new Novalocacao();
+                Novalocacao novalocacao = new Novalocacao(LocacaoId);
                 novalocacao.ShowDialog();
 
 
                 CarregaDadosDGV();
             }
+        }
+
+        private void cmbStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CarregaDadosDGV();
         }
     }
 }
